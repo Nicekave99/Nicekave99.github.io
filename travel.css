@@ -224,7 +224,6 @@ header {
     padding: -20px;
   }
 
-
   .thumbnail {
     padding: 0 10px;
     height: 120px;
@@ -239,38 +238,32 @@ header {
     right: 20px;
     margin: 20px;
     padding-top: 27rem;
-}
-
-@media screen and (max-width: 480px) {
-  
-  
-  header {
-    height: 50px;
-    padding: 20px 10px;
   }
 
-  .slider .list .item .content {
-    left: 10px;
-    top: 10%;
-    width: 80%;
-  }
+  @media screen and (max-width: 480px) {
+    .slider .list .item .content {
+      left: 10px;
+      top: 10%;
+      width: 80%;
+    }
 
-  .thumbnail {
-    padding: 0 5px;
-    height: 100px;
-  }
+    .thumbnail {
+      padding: 0 5px;
+      height: 100px;
+    }
 
-  .thumbnail .item {
-    width: 60px;
-    height: 80px;
-  }
+    .thumbnail .item {
+      width: 60px;
+      height: 80px;
+    }
 
-  .arrows {
-    right: 10px;
-  }
+    .arrows {
+      right: 10px;
+    }
 
-  .arrows button {
-    width: 25px;
-    height: 25px;
+    .arrows button {
+      width: 25px;
+      height: 25px;
+    }
   }
 }
