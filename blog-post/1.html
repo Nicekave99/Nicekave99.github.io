@@ -6,7 +6,7 @@
     <title>EVENTS - ประเพณี แห่เจ้าพ่อ เจ้าแม่ ปากน้ำโพ</title>
     <script
       async
-      src="https://api.countapi.xyz/hit/nicekave99.github.io/visits?callback=cb"
+      src="https://counterapi.com/api/nicekave99.github.io/view/nicekave99readOnly=true&startNumber=42000?callback=cb"
     ></script>
     <link rel="stylesheet" href="../styles.css" />
     <link
@@ -274,7 +274,7 @@
                       ประเพณีแห่เจ้าพ่อ–เจ้าแม่ปากน้ำโพจึงได้รับการขึ้นบัญชีเป็นมรดกภูมิปัญญาของชาติไทย
                     </span>
 
-                    <h5>Visit <span id="visits"></span> Times.</h5>
+                    <div id="Visits">Visits:</div>
                   </div>
                 </div>
               </div>
@@ -283,7 +283,6 @@
         </div>
       </div>
     </main>
-
     <script>
       function cb(response) {
         document.getElementById("visits").innerText = response.value;
