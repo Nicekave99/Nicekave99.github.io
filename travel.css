@@ -1,0 +1,230 @@
+/* กำหนดสีของข้อความใน body ให้เป็นสี #eee */
+body {
+  color: #eee;
+  background: #000 !important;
+}
+
+/* กำหนดความกว้างของ SVG ทุกตัวให้เป็น 25px */
+svg {
+  width: 25px;
+}
+
+/* กำหนดโครงสร้างของ header */
+header {
+  width: 1200px; /* กำหนดความกว้างของ header */
+  max-width: 90%; /* กำหนดความกว้างสูงสุดให้เป็น 90% ของหน้าจอเมื่อหน้าจอเล็กกว่า 1200px */
+  margin: auto; /* จัดให้อยู่ตรงกลางของหน้า */
+  display: grid; /* จัดวาง header ในรูปแบบ grid */
+  position: relative; /* กำหนดให้ใช้งาน z-index ได้ */
+  z-index: 100; /* ทำให้ header อยู่ในเลเยอร์ที่สูงกว่า */
+}
+
+/* เริ่มการจัดการ slider */
+.slider {
+  height: 100vh; /* ให้ slider มีความสูงเต็มหน้าจอ */
+  margin-top: -50px; /* เลื่อน slider ขึ้นไปข้างบนเล็กน้อย */
+  position: relative; /* ใช้ position relative เพื่อจัดวางองค์ประกอบข้างใน */
+}
+
+/* การตั้งค่าให้กับแต่ละ item ใน slider */
+.slider .list .item {
+  position: absolute; /* จัดให้ item ทับกัน */
+  inset: 0 0 0 0; /* ให้ครอบคลุมพื้นที่ทั้งหมดของ slider */
+  overflow: auto; /* ซ่อนส่วนที่เกินของภาพหรือเนื้อหา */
+  opacity: 0; /* ซ่อน item ที่ยังไม่แสดง */
+  transition: 0.5s; /* ตั้งค่าเวลาในการเปลี่ยนแปลง opacity */
+}
+
+/* ตั้งค่ารูปภาพภายใน item ของ slider */
+.slider .list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ทำให้รูปภาพครอบคลุม item โดยไม่ยืดหรือบิดเบี้ยว */
+}
+
+/* เพิ่ม overlay gradient ที่ครอบคลุมพื้นที่ทั้งหมดของรูปภาพ */
+.slider .list .item::after {
+  content: ""; /* ใช้ pseudo-element เพื่อสร้างเลเยอร์ overlay */
+  width: 100%; /* ครอบคลุมความกว้างทั้งหมด */
+  height: 100%; /* ครอบคลุมความสูงทั้งหมด */
+  position: absolute; /* วางเลเยอร์ overlay ทับรูปภาพ */
+  left: 0; /* ชิดซ้าย */
+  bottom: 0; /* ชิดล่าง */
+  background-image: linear-gradient(
+    to top,
+    #000 5%,
+    transparent
+  ); /* ใช้ gradient สีดำที่ด้านล่างจางไปที่ด้านบน */
+}
+
+/* การจัดวางเนื้อหาใน item ของ slider */
+.slider .list .item .content {
+  position: absolute; /* วางตำแหน่งเนื้อหาให้อยู่บนรูปภาพ */
+  left: 10%; /* ห่างจากด้านซ้าย 10% */
+  top: 20%; /* ห่างจากด้านบน 20% */
+  width: 500px; /* ความกว้างของเนื้อหา */
+  max-width: 80%; /* กำหนดความกว้างสูงสุดที่ 80% ของหน้าจอเมื่อหน้าจอเล็กกว่า 500px */
+  z-index: 1; /* ให้อยู่เหนือ gradient overlay */
+}
+
+/* ปรับแต่งข้อความย่อยในเนื้อหาให้เป็นตัวพิมพ์ใหญ่และเพิ่มช่องว่างระหว่างตัวอักษร */
+.slider .list .item .content p:nth-child(1) {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase; /* เปลี่ยนเป็นตัวพิมพ์ใหญ่ */
+  letter-spacing: 2px; /* เพิ่มช่องว่างระหว่างตัวอักษร */
+}
+
+.slider .list .item .content p:nth-child(3) {
+  font-size: 19.2px;
+  text-align: left;
+  font-weight: 900;
+  text-transform: uppercase; /* เปลี่ยนเป็นตัวพิมพ์ใหญ่ */
+  letter-spacing: 0.5px; /* เพิ่มช่องว่างระหว่างตัวอักษร */
+  filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
+
+  a {
+    color: red;
+    text-decoration: underline;
+    filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
+  }
+}
+
+.thumbnail .content {
+  color: #fff;
+  filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
+}
+/* ตั้งค่าขนาดและรูปแบบของหัวข้อในเนื้อหา */
+.slider .list .item .content h2 {
+  font-size: 40px; /* ขนาดของหัวข้อ */
+  margin: 15px 0; /* ยกเลิก margin */
+}
+
+/* ทำให้ item ที่กำลังแสดงมีความโปร่งใส 100% */
+.slider .list .item.active {
+  opacity: 1; /* ทำให้ item แสดงเต็มที่ */
+  z-index: 10; /* วางอยู่ในเลเยอร์ที่สูงกว่า */
+}
+
+/* การเคลื่อนไหวของเนื้อหา */
+@keyframes showContent {
+  to {
+    transform: translateY(0); /* เคลื่อนตำแหน่ง Y กลับมาที่เดิม */
+    filter: blur(0); /* ยกเลิกการเบลอ */
+    opacity: 1; /* ทำให้มองเห็นเต็มที่ */
+  }
+}
+
+/* ทำให้เนื้อหาใน item ที่แอคทีฟมีการเคลื่อนไหว */
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3) {
+  transform: translateY(30px); /* เริ่มการเคลื่อนที่จากตำแหน่ง Y ที่ 30px */
+  filter: blur(20px); /* เบลอเนื้อหา */
+  opacity: 0; /* ซ่อนเนื้อหา */
+  animation: showContent 0.5s 0.7s ease-in-out 1 forwards; /* ใช้ keyframe "showContent" */
+}
+
+.slider .list .item.active h2 {
+  animation-delay: 1s; /* หน่วงเวลาการเคลื่อนไหวของ h2 */
+}
+
+.slider .list .item.active p:nth-child(3) {
+  animation-duration: 1.3s; /* ตั้งเวลาในการเคลื่อนไหวให้นานขึ้น */
+}
+
+/* ปุ่มลูกศรสำหรับเปลี่ยนภาพ */
+.arrows {
+  position: absolute; /* จัดตำแหน่งปุ่มใน slider */
+  top: 30%; /* ห่างจากด้านบน 30% */
+  right: 50px; /* ห่างจากด้านขวา 50px */
+  z-index: 100; /* ทำให้ปุ่มอยู่ในเลเยอร์ที่สูงกว่า */
+}
+
+/* สไตล์ของปุ่มลูกศร */
+.arrows button {
+  background-color: #eee5; /* สีพื้นหลังโปร่งแสง */
+  border: none; /* ยกเลิก border */
+  font-family: monospace; /* ใช้ฟอนต์ monospace */
+  width: 40px; /* ความกว้างของปุ่ม */
+  height: 40px; /* ความสูงของปุ่ม */
+  border-radius: 5px; /* มุมโค้งมน */
+  font-size: x-large; /* ขนาดฟอนต์ใหญ่ */
+  color: #eee; /* สีตัวอักษร */
+  transition: 0.5s; /* เวลาเปลี่ยนสี */
+}
+
+.arrows button:hover {
+  background-color: #eee; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+  color: black; /* เปลี่ยนสีตัวอักษรเป็นสีดำเมื่อ hover */
+}
+
+/* โครงสร้างของ thumbnail */
+.thumbnail {
+  position: absolute; /* วางตำแหน่ง thumbnail ที่ด้านล่าง */
+  bottom: 50px; /* ห่างจากด้านล่าง 50px */
+  z-index: 11; /* อยู่เหนือเนื้อหา slider */
+  display: flex; /* จัด thumbnail ในแนวนอน */
+  gap: 10px; /* ระยะห่างระหว่าง thumbnail */
+  width: 100%; /* ความกว้างเต็ม */
+  height: 250px; /* ความสูงของ thumbnail */
+  padding: 0 50px; /* padding ซ้ายขวา 50px */
+  margin: -50px 0;
+  box-sizing: border-box; /* รวม padding ในขนาด thumbnail */
+  overflow: auto; /* แสดง scrollbar เมื่อ overflow */
+  justify-content: center; /* จัดให้อยู่ตรงกลาง */
+  cursor: pointer;
+
+  :hover {
+    opacity: 0.6;
+  }
+}
+
+/* ซ่อน scrollbar ใน thumbnail */
+.thumbnail::-webkit-scrollbar {
+  width: 0;
+}
+/* รูปแบบของแต่ละ thumbnail */
+.thumbnail .item {
+  width: 150px; /* ความกว้างของแต่ละ thumbnail */
+  height: 220px; /* ความสูงของแต่ละ thumbnail */
+  filter: brightness(0.5); /* ทำให้ thumbnail มืดลง */
+  transition: 0.5s; /* ตั้งเวลาในการเปลี่ยนความสว่าง */
+  flex-shrink: 0; /* ป้องกันการย่อขนาดของ thumbnail */
+}
+
+/* ปรับขนาดรูปภาพใน thumbnail */
+.thumbnail .item img {
+  width: 100%; /* รูปภาพเต็มความกว้าง */
+  height: 100%; /* รูปภาพเต็มความสูง */
+  object-fit: cover; /* ครอบคลุมพื้นที่ thumbnail */
+  border-radius: 10px; /* ขอบโค้งมน */
+}
+
+/* เพิ่มความสว่างให้ thumbnail ที่แอคทีฟ */
+.thumbnail .item.active {
+  filter: brightness(1.5); /* ทำให้สว่างขึ้น */
+  margin-top: 1rem;
+  position: relative;
+}
+
+/* กำหนดตำแหน่งของเนื้อหาใน thumbnail */
+.thumbnail .item .content {
+  position: absolute; /* วางเนื้อหาในตำแหน่งที่ต้องการ */
+  inset: auto 10px 10px 10px; /* ระยะห่างจากขอบ */
+}
+
+/* การตั้งค่าขนาดฟอนต์และตำแหน่งปุ่มในหน้าจอขนาดเล็ก */
+@media screen and (max-width: 678px) {
+  .thumbnail {
+    justify-content: start; /* จัด thumbnail ให้อยู่ด้านซ้าย */
+  }
+
+  .slider .list .item .content h2 {
+    font-size: 60px; /* ลดขนาดฟอนต์ของ h2 */
+  }
+
+  .arrows {
+    top: 10%; /* ปรับตำแหน่งปุ่มให้อยู่ด้านบน */
+  }
+}
