@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>EVENTS - ประเพณี แห่เจ้าพ่อ เจ้าแม่ ปากน้ำโพ</title>
+    <script
+      async
+      src="https://api.countapi.xyz/hit/nicekave99.github.io/visits?callback=cb"
+    ></script>
     <link rel="stylesheet" href="../styles.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
@@ -280,6 +284,10 @@
       </div>
     </main>
 
-    <script src="../main.js"></script>
+    <script>
+      function cb(response) {
+        document.getElementById("visits").innerText = response.value;
+      }
+    </script>
   </body>
 </html>
