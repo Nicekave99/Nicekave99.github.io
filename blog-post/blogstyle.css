@@ -27,6 +27,10 @@ h1 {
   font-size: 1.7rem;
 }
 
+.item-page-title a:hover {
+  color: violet;
+}
+
 .MS1 {
   display: block;
   margin-bottom: 25px;
