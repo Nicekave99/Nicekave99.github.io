@@ -20,7 +20,7 @@ body {
 .blog-heading {
   display: flex;
   position: absolute;
-  margin-top: 9rem;
+  margin-top: 2px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -191,11 +191,11 @@ body {
   }
 
   .blog-heading {
-    margin-top: 6rem;
+    margin-top: 15rem;
   }
 
   .blog-heading h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
@@ -206,7 +206,7 @@ body {
 
 @media screen and (max-width: 480px) {
   .blog_wrapper {
-    margin: 30px 10px;
+    margin: 50px 10px;
   }
 
   .blog-heading h3 {

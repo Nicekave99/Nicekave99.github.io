@@ -11,6 +11,7 @@ svg {
 
 /* กำหนดโครงสร้างของ header */
 header {
+  height: 50px !important;
   width: 1200px; /* กำหนดความกว้างของ header */
   max-width: 90%; /* กำหนดความกว้างสูงสุดให้เป็น 90% ของหน้าจอเมื่อหน้าจอเล็กกว่า 1200px */
   margin: auto; /* จัดให้อยู่ตรงกลางของหน้า */
@@ -226,5 +227,11 @@ header {
 
   .arrows {
     top: 10%; /* ปรับตำแหน่งปุ่มให้อยู่ด้านบน */
+  }
+}
+
+@media (width > 768px) {
+  header {
+    height: 50px !important;
   }
 }

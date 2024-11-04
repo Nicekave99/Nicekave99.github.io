@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+header {
+  height: 50px !important;
+}
+
 main {
   max-width: 1000px;
   margin: 60px auto;
