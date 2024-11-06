@@ -270,3 +270,54 @@ header {
     }
   }
 }
+
+/* Responsive layout for larger screens (24-inch) */
+@media screen and (min-width: 1600px) {
+  /* เพิ่มขนาด font และปรับความกว้าง */
+  body {
+    font-size: 1.2em;
+  }
+
+  .header {
+    max-width: 90%;
+    height: 70px;
+  }
+
+  .slider .list .item .content {
+    left: 15%;
+    top: 30%;
+    width: 600px;
+    max-width: 60%;
+  }
+
+  .slider .list .item .content h2 {
+    font-size: 40px;
+  }
+
+  .slider .list .item .content p:nth-child(1),
+  .slider .list .item .content p:nth-child(3) {
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .arrows {
+    right: 70px;
+    top: 40%;
+  }
+
+  .arrows button {
+    width: 50px;
+    height: 50px;
+    font-size: xx-large;
+  }
+
+  .thumbnail {
+    height: 300px;
+    padding: 0 70px;
+  }
+
+  .thumbnail .item {
+    width: 200px;
+    height: 250px;
+  }
+}
