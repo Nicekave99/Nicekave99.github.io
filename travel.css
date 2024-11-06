@@ -271,53 +271,64 @@ header {
   }
 }
 
-/* Responsive layout for larger screens (24-inch) */
-@media screen and (min-width: 1600px) {
-  /* เพิ่มขนาด font และปรับความกว้าง */
-  body {
-    font-size: 1.2em;
-  }
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  /* สำหรับจอขนาด 19 นิ้วและ 24 นิ้ว */
 
-  .header {
-    max-width: 90%;
-    height: 70px;
+  /* ปรับขนาดฟอนต์ */
+  .slider .list .item .content p:nth-child(1) {
+    font-size: 25px;
   }
-
-  .slider .list .item .content {
-    left: 15%;
-    top: 30%;
-    width: 600px;
-    max-width: 60%;
-  }
-
-  .slider .list .item .content h2 {
-    font-size: 40px;
-  }
-
-  .slider .list .item .content p:nth-child(1),
   .slider .list .item .content p:nth-child(3) {
-    font-size: 22px;
-    letter-spacing: 3px;
+    font-size: 16px;
+  }
+  .slider .list .item .content h2 {
+    font-size: 27px;
   }
 
-  .arrows {
-    right: 70px;
-    top: 40%;
-  }
-
-  .arrows button {
-    width: 50px;
-    height: 50px;
-    font-size: xx-large;
-  }
-
+  /* ปรับขนาด thumbnail */
   .thumbnail {
-    height: 300px;
-    padding: 0 70px;
+    height: 200px;
+  }
+  .thumbnail .item {
+    width: 120px;
+    height: 180px;
   }
 
+  /* ปรับขนาดปุ่มลูกศร */
+  .arrows button {
+    width: 35px;
+    height: 35px;
+    font-size: large;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  /* สำหรับจอที่ใหญ่กว่า 24 นิ้ว */
+
+  /* ปรับขนาดฟอนต์ให้เล็กลง */
+  .slider .list .item .content p:nth-child(1) {
+    font-size: 23px;
+  }
+  .slider .list .item .content p:nth-child(3) {
+    font-size: 15px;
+  }
+  .slider .list .item .content h2 {
+    font-size: 25px;
+  }
+
+  /* ปรับขนาด thumbnail ให้เล็กลง */
+  .thumbnail {
+    height: 180px;
+  }
   .thumbnail .item {
-    width: 200px;
-    height: 250px;
+    width: 100px;
+    height: 160px;
+  }
+
+  /* ปรับขนาดปุ่มลูกศร */
+  .arrows button {
+    width: 30px;
+    height: 30px;
+    font-size: medium;
   }
 }
