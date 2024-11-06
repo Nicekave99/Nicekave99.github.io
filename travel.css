@@ -165,23 +165,27 @@ header {
 
 /* โครงสร้างของ thumbnail */
 .thumbnail {
-  position: absolute; /* วางตำแหน่ง thumbnail ที่ด้านล่าง */
-  bottom: 50px; /* ห่างจากด้านล่าง 50px */
-  z-index: 11; /* อยู่เหนือเนื้อหา slider */
+  position: fixed; /* ใช้ fixed เพื่อให้มันอยู่ที่ตำแหน่งคงที่ที่ด้านล่าง */
+  bottom: 0; /* ให้มันอยู่ด้านล่างสุดของหน้า */
+  left: 0; /* ให้มันชิดซ้าย */
+  z-index: 10; /* ตั้งค่าระดับของ thumbnail ให้อยู่เหนือเนื้อหาหลัก */
   display: flex; /* จัด thumbnail ในแนวนอน */
   gap: 10px; /* ระยะห่างระหว่าง thumbnail */
   width: 100%; /* ความกว้างเต็ม */
   height: 250px; /* ความสูงของ thumbnail */
   padding: 0 50px; /* padding ซ้ายขวา 50px */
-  margin: -50px 0;
   box-sizing: border-box; /* รวม padding ในขนาด thumbnail */
-  overflow: auto; /* แสดง scrollbar เมื่อ overflow */
-  justify-content: center; /* จัดให้อยู่ตรงกลาง */
-  cursor: pointer;
+  overflow-x: scroll; /* เพิ่มการเลื่อนในแนวนอน */
+  cursor: grab; /* ตั้งค่า cursor ให้แสดงเป็น grab เมื่อพร้อมลาก */
+  background-color: rgba(0, 0, 0, 0.7); /* เพิ่มพื้นหลังโปร่งแสง */
 
   :hover {
     opacity: 0.6;
   }
+}
+
+.thumbnail:active {
+  cursor: grabbing; /* เปลี่ยนเป็น grabbing เมื่อกำลังลาก */
 }
 
 /* ซ่อน scrollbar ใน thumbnail */
@@ -279,7 +283,7 @@ header {
     font-size: 25px;
   }
   .slider .list .item .content p:nth-child(3) {
-    font-size: 16px;
+    font-size: 20px;
   }
   .slider .list .item .content h2 {
     font-size: 27px;
@@ -302,6 +306,37 @@ header {
   }
 }
 
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+  /* ปรับขนาดฟอนต์ */
+  .slider .list .item .content p:nth-child(1) {
+    font-size: 25px;
+  }
+  .slider .list .item .content p:nth-child(3) {
+    font-size: 15px;
+    padding-bottom: 200px;
+  }
+  .slider .list .item .content h2 {
+    font-size: 27px;
+  }
+
+  /* ปรับขนาด thumbnail */
+  .thumbnail {
+    position: absolute;
+    margin-top: 20px;
+  }
+  .thumbnail .item {
+    width: 120px;
+    height: 180px;
+  }
+
+  /* ปรับขนาดปุ่มลูกศร */
+  .arrows button {
+    width: 35px;
+    height: 35px;
+    font-size: large;
+  }
+}
+
 @media screen and (min-width: 1921px) {
   /* สำหรับจอที่ใหญ่กว่า 24 นิ้ว */
 
@@ -310,7 +345,7 @@ header {
     font-size: 23px;
   }
   .slider .list .item .content p:nth-child(3) {
-    font-size: 15px;
+    font-size: 25px;
   }
   .slider .list .item .content h2 {
     font-size: 25px;

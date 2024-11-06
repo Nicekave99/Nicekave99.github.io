@@ -59,3 +59,33 @@ thumbnails.forEach((thumbnail, index) => {
     showSlider();
   });
 });
+
+// Draggable Slider
+let thumbnail = document.querySelector(".thumbnail");
+let isDragging = false;
+let startX, scrollLeft;
+
+thumbnail.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.pageX - thumbnail.offsetLeft; // เริ่มต้นตำแหน่งที่คลิก
+  scrollLeft = thumbnail.scrollLeft; // ตำแหน่งการเลื่อน
+  thumbnail.style.cursor = "grabbing"; // เปลี่ยน cursor
+});
+
+thumbnail.addEventListener("mouseleave", () => {
+  isDragging = false;
+  thumbnail.style.cursor = "grab"; // เปลี่ยนกลับเมื่อไม่ลากแล้ว
+});
+
+thumbnail.addEventListener("mouseup", () => {
+  isDragging = false; // รีเซ็ตการลากเมื่อปล่อยเมาส์
+  thumbnail.style.cursor = "grab"; // เปลี่ยนกลับเมื่อไม่ลากแล้ว
+});
+
+thumbnail.addEventListener("mousemove", (e) => {
+  if (!isDragging) return; // ถ้าไม่กำลังลาก ให้หยุด
+  e.preventDefault(); // ป้องกันการเลือกข้อความ
+  const x = e.pageX - thumbnail.offsetLeft; // ตำแหน่งที่ลาก
+  const walk = (x - startX) * 2; // ความเร็วการลาก
+  thumbnail.scrollLeft = scrollLeft - walk; // เลื่อน thumbnail
+});
