@@ -172,7 +172,7 @@ header {
   gap: 10px; /* ระยะห่างระหว่าง thumbnail */
   width: 100%; /* ความกว้างเต็ม */
   height: 250px; /* ความสูงของ thumbnail */
-  padding: 0 50px; padding ซ้ายขวา 50px
+  padding: 0 50px;
   box-sizing: border-box; /* รวม padding ในขนาด thumbnail */
   overflow-x: scroll; /* เพิ่มการเลื่อนในแนวนอน */
   cursor: grab; /* ตั้งค่า cursor ให้แสดงเป็น grab เมื่อพร้อมลาก */
@@ -273,8 +273,6 @@ header {
   }
 }
 
-
-
 @media screen and (max-width: 1366px) {
   /* ปรับขนาดฟอนต์ */
   .slider .list .item .content p:nth-child(1) {
@@ -307,5 +305,3 @@ header {
     font-size: large;
   }
 }
-
-
