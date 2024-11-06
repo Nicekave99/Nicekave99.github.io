@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOTEL - โรงแรมตามสบาย</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="blogstyle.css" />
+  </head>
+  <body>
+    <!-- Navbar Header -->
+    <header class="header" id="header">
+      <section class="container">
+        <nav>
+          <div class="nav__bar">
+            <a href="#" class="nav__logo">
+              <img src="../assets/logo.png" alt="logo" />
+              <!-- <span>จังหวัด</span> -->
+            </a>
+            <div class="nav__menu__btn" id="menu-btn">
+              <i class="ri-menu-3-line"></i>
+            </div>
+          </div>
+          <ul class="nav__links" id="nav-links">
+            <li><a href="../index.html">หน้าแรก</a></li>
+            <li><a href="../about.html">ประวัติและข้อมูลจังหวัด</a></li>
+            <li><a href="../travel.html">สถานที่ท่องเที่ยว</a></li>
+            <li><a href="../events.html">เทศกาล</a></li>
+            <li><a href="../cars.html">การเดินทาง</a></li>
+            <li><a href="../Rest-Food.html">ที่พักและอาหาร</a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+    <main>
+      <div class="containerx">
+        <div class="main-image">
+          <img
+            src="../assets/RF/Tam-sabai.jpg"
+            alt="Main Hotel Image"
+            onclick="openModal(this)"
+          />
+        </div>
+        <div class="gallery">
+          <img
+            src="../assets/RF/Tam-sabai-rec.webp"
+            alt="Reception Image"
+            onclick="openModal(this)"
+          />
+          <img
+            src="../assets/RF/Tam-sabai-room.jpg"
+            alt="Room Image"
+            onclick="openModal(this)"
+          />
+        </div>
+        <div class="info">
+          <h1>โรงแรมตามสบาย (Tam Sabai Hotel)</h1>
+
+          <p class="description" style="text-indent: 25px">
+            "เป็นโรงแรมที่ตั้งอยู่ในจังหวัดนครสวรรค์
+            มีจุดเด่นที่บรรยากาศเงียบสงบและบริการที่เป็นกันเอง
+            โดยโรงแรมนี้มีสิ่งอำนวยความสะดวกครบครัน เช่น
+            ห้องพักหลากหลายประเภทที่เหมาะสำหรับทั้งนักท่องเที่ยวและผู้เดินทางเพื่อทำธุรกิจ
+            ร้านอาหารที่เสิร์ฟอาหารท้องถิ่นและนานาชาติ
+            รวมถึงพื้นที่จัดงานประชุมหรือสัมนาที่สามารถรองรับกลุ่มลูกค้าได้อย่างสะดวกสบาย"
+          </p>
+          <div class="contact-info">
+            <p><strong>เบอร์โทร</strong> : 056256151</p>
+            <br />
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=15.68124963,100.1296136"
+              target="_blank"
+              >เปิดแผนที่</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg" />
+      </div>
+    </main>
+
+    <script src="../main.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

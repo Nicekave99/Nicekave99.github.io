@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOOD - บ้านอีสาน</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="blogstyle.css" />
+  </head>
+  <body>
+    <!-- Navbar Header -->
+    <header class="header" id="header">
+      <section class="container">
+        <nav>
+          <div class="nav__bar">
+            <a href="#" class="nav__logo">
+              <img src="../assets/logo.png" alt="logo" />
+              <!-- <span>จังหวัด</span> -->
+            </a>
+            <div class="nav__menu__btn" id="menu-btn">
+              <i class="ri-menu-3-line"></i>
+            </div>
+          </div>
+          <ul class="nav__links" id="nav-links">
+            <li><a href="../index.html">หน้าแรก</a></li>
+            <li><a href="../about.html">ประวัติและข้อมูลจังหวัด</a></li>
+            <li><a href="../travel.html">สถานที่ท่องเที่ยว</a></li>
+            <li><a href="../events.html">เทศกาล</a></li>
+            <li><a href="../cars.html">การเดินทาง</a></li>
+            <li><a href="../Rest-Food.html">ที่พักและอาหาร</a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <main>
+      <div class="containerx">
+        <div class="main-image">
+          <img
+            style="margin-top: 25px; width: 450px; height: 350px"
+            src="../assets/RF/Ban-esan.jpg"
+            onclick="openModal(this)"
+          />
+        </div>
+        <div class="gallery">
+          <img src="../assets/RF/Ban-esan1.jpg" onclick="openModal(this)" />
+          <img src="../assets/RF/Ban-esan 2.jpg" onclick="openModal(this)" />
+        </div>
+        <div class="info">
+          <h1>บ้านอีสาน นครสวรรค์</h1>
+
+          <p class="description" style="text-indent: 25px">
+            "ร้านบ้านอีสานเป็นร้านอาหารนครสวรรค์ที่มีเมนูอาหารอีสานหลากหลายเมนู
+            สำหรับเมนูเด็ดประจำร้านอาหารในนครสวรรค์ร้านนี้ขอยกให้ "ไก่ย่าง" กับ
+            "ต้มแซ่บกระดูกอ่อน" เลย แล้วตัวร้านอาหารค่อนข้างใหญ่ นั่งสะดวกสบาย
+            สะอาด"
+          </p>
+          <div class="contact-info">
+            <p><strong>เบอร์โทร</strong> : 056882555,056882558</p>
+            <br />
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=15.67938130048457,100.10295432060956"
+              target="_blank"
+              >เปิดแผนที่</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg" />
+      </div>
+    </main>
+
+    <script src="../main.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

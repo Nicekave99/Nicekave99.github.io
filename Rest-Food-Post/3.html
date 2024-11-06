@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOTEL - โรงแรมโฟทูซีเดอะซิคโอเต็ล</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="blogstyle.css" />
+  </head>
+  <body>
+    <!-- Navbar Header -->
+    <header class="header" id="header">
+      <section class="container">
+        <nav>
+          <div class="nav__bar">
+            <a href="#" class="nav__logo">
+              <img src="../assets/logo.png" alt="logo" />
+              <!-- <span>จังหวัด</span> -->
+            </a>
+            <div class="nav__menu__btn" id="menu-btn">
+              <i class="ri-menu-3-line"></i>
+            </div>
+          </div>
+          <ul class="nav__links" id="nav-links">
+            <li><a href="../index.html">หน้าแรก</a></li>
+            <li><a href="../about.html">ประวัติและข้อมูลจังหวัด</a></li>
+            <li><a href="../travel.html">สถานที่ท่องเที่ยว</a></li>
+            <li><a href="../events.html">เทศกาล</a></li>
+            <li><a href="../cars.html">การเดินทาง</a></li>
+            <li><a href="../Rest-Food.html">ที่พักและอาหาร</a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <main>
+      <div class="containerx">
+        <div class="main-image">
+          <img
+            style="margin-top: 25px"
+            src="../assets/RF/42CC.jpg"
+            onclick="openModal(this)"
+          />
+        </div>
+        <div class="gallery">
+          <img src="../assets/RF/42C-room.jpg" onclick="openModal(this)" />
+          <img src="../assets/RF/42C-toilet.webp" onclick="openModal(this)" />
+        </div>
+        <div class="info">
+          <h1>โรงแรมโฟทูซีเดอะซิคโอเต็ล (42C The Chic Hotel)</h1>
+
+          <p class="description" style="text-indent: 25px">
+            "เป็นโรงแรมทันสมัยในจังหวัดนครสวรรค์ที่มีดีไซน์และสิ่งอำนวยความสะดวกตอบโจทย์ผู้เข้าพักรุ่นใหม่
+            โดดเด่นด้วยบรรยากาศสดใสและการตกแต่งที่มีสไตล์
+            มีห้องพักหลายประเภทที่ออกแบบมาเพื่อความสะดวกสบายสูงสุดของผู้เข้าพัก
+            ทั้งนี้ยังมีสิ่งอำนวยความสะดวก เช่น สระว่ายน้ำ ฟิตเนส ร้านอาหาร
+            และคาเฟ่ที่มอบบรรยากาศผ่อนคลาย
+            เหมาะสำหรับผู้ที่ต้องการที่พักที่มีดีไซน์เฉพาะตัวและบริการที่ครอบคลุม"
+          </p>
+          <div class="contact-info">
+            <p><strong>เบอร์โทร</strong> : 056225000</p>
+            <br />
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=15.7201733,100.1171395"
+              target="_blank"
+              >เปิดแผนที่</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg" />
+      </div>
+    </main>
+
+    <script src="../main.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

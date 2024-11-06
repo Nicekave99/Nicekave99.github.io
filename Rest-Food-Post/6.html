@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOOD - กุ้งเผา 2 น้ำปิง รีสอร์ท</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="blogstyle.css" />
+  </head>
+  <body>
+    <!-- Navbar Header -->
+    <header class="header" id="header">
+      <section class="container">
+        <nav>
+          <div class="nav__bar">
+            <a href="#" class="nav__logo">
+              <img src="../assets/logo.png" alt="logo" />
+              <!-- <span>จังหวัด</span> -->
+            </a>
+            <div class="nav__menu__btn" id="menu-btn">
+              <i class="ri-menu-3-line"></i>
+            </div>
+          </div>
+          <ul class="nav__links" id="nav-links">
+            <li><a href="../index.html">หน้าแรก</a></li>
+            <li><a href="../about.html">ประวัติและข้อมูลจังหวัด</a></li>
+            <li><a href="../travel.html">สถานที่ท่องเที่ยว</a></li>
+            <li><a href="../events.html">เทศกาล</a></li>
+            <li><a href="../cars.html">การเดินทาง</a></li>
+            <li><a href="../Rest-Food.html">ที่พักและอาหาร</a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <main>
+      <div class="containerx">
+        <div class="main-image">
+          <img
+            style="margin-top;: 50px"
+            src="../assets/RF/Nam-ping-resort.jpg"
+            onclick="openModal(this)"
+          />
+        </div>
+        <div class="gallery">
+          <img src="../assets/RF/nam-ping-f1.jpg" onclick="openModal(this)" />
+          <img src="../assets/RF/nam-ping-f2.jpg" onclick="openModal(this)" />
+        </div>
+        <div class="info">
+          <h1>ร้านอาหาร กุ้งเผา2 น้ำปิงรีสอร์ท</h1>
+
+          <p class="description" style="text-indent: 25px">
+            "เป็นร้านอาหารนครสวรรค์ที่ทางโรงแรมที่ไปพักได้แนะนำมา
+            ร้านค่อนข้างใหญ่เลยทีเดียว มีอาหารทะเลสด ๆ ให้เลือกมากมาย
+            อาหารสดรสชาติดีมาก พนักงานบริการดี
+            แล้วพอเป็นร้านอาหารในนครสวรรค์ก็ได้นั่งชมบรรยากาศสุดชิลริมแม่น้ำปิงไปอีก
+            "
+          </p>
+          <div class="contact-info">
+            <p><strong>เบอร์โทร</strong> : 056355996, 056355990</p>
+            <br />
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=15.730934584116314,100.11544204749248"
+              target="_blank"
+              >เปิดแผนที่</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg" />
+      </div>
+    </main>
+
+    <script src="../main.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

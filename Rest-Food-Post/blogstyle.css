@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+main {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Kanit", sans-serif;
+  /* gap: 30px; เว้นระยะห่างระหว่าง sections */
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerx {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  padding-top: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.main-image img:hover {
+  transform: scale(1.05);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.info {
+  grid-column: span 2;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.description {
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+/* Existing styles above... */
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Sits on top of other elements */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+  transition: all ease 0.5s;
+}
+
+.modal-content {
+  margin: 10rem auto;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive styles for tablets and mobiles */
+@media (max-width: 768px) {
+  .containerx {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .info {
+    grid-column: span 1;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .close {
+    font-size: 30px;
+    top: 15px;
+    right: 25px;
+  }
+}
