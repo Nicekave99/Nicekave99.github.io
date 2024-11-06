@@ -290,6 +290,7 @@ header {
 
   .thumbnail {
     position: absolute;
+    padding: 50px;
     /* display: none; */
   }
 
