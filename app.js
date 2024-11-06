@@ -89,3 +89,24 @@ thumbnail.addEventListener("mousemove", (e) => {
   const walk = (x - startX) * 2; // ความเร็วการลาก
   thumbnail.scrollLeft = scrollLeft - walk; // เลื่อน thumbnail
 });
+
+window.addEventListener("DOMContentLoaded", adjustThumbnailPosition);
+window.addEventListener("resize", adjustThumbnailPosition);
+
+function adjustThumbnailPosition() {
+  // เลือก .content และ .thumbnail
+  const content = document.querySelectorAll(".slider .list .item .content");
+  const thumbnail = document.querySelector(".thumbnail");
+
+  content.forEach((item) => {
+    const contentHeight = item.offsetHeight; // ความสูงของเนื้อหา
+    const sliderHeight = window.innerHeight; // ความสูงของหน้าจอ
+
+    // หากเนื้อหามีความสูงเกินกว่าความสูงของหน้าจอ
+    if (contentHeight > sliderHeight) {
+      thumbnail.style.marginTop = `${contentHeight + 20}px`; // ปรับตำแหน่ง thumbnail ให้ห่างจากเนื้อหามากขึ้น
+    } else {
+      thumbnail.style.marginTop = "50px"; // ให้ thumbnail อยู่ที่ตำแหน่งปกติ
+    }
+  });
+}
