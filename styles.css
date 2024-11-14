@@ -147,13 +147,6 @@ nav {
   width: 100%;
   max-width: 600px;
   aspect-ratio: 1;
-  margin: auto;
-  background-image: url("assets/munkon.webp");
-  background-position: center center;
-  background-size: cover;
-  -webkit-mask: url("assets/header-bg.png");
-  -webkit-mask-size: cover;
-  -webkit-mask-position: center center;
 }
 
 .container__content {
